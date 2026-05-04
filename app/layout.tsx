@@ -14,8 +14,39 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SRM | Portfolio",
-  description: "A professional portfolio",
+  metadataBase: new URL("https://samipab.com.np"),
+  title: {
+    default: "Samipab Roka Magar | Portfolio",
+    template: "%s | Samipab Roka Magar",
+  },
+  description:
+    "Samipab Roka Magar is a web developer based in Pokhara, Nepal, building modern, fast, and accessible websites and apps.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    title: "Samipab Roka Magar | Portfolio",
+    description:
+      "Samipab Roka Magar is a web developer based in Pokhara, Nepal, building modern, fast, and accessible web applications.",
+    siteName: "Samipab Roka Magar",
+    images: [
+      {
+        url: "/images/me.webp",
+        width: 1200,
+        height: 630,
+        alt: "Samipab Roka Magar",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Samipab Roka Magar | Portfolio",
+    description:
+      "Samipab Roka Magar is a web developer based in Pokhara, Nepal, building modern, fast, and accessible web applications.",
+    images: ["/images/me.webp"],
+  },
 };
 
 export default function RootLayout({
