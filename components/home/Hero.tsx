@@ -69,7 +69,7 @@ export function Hero() {
               {/* Code Content */}
               <div className="p-6 text-sm sm:text-base font-mono leading-relaxed overflow-x-auto whitespace-nowrap">
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     1
                   </span>
                   <span className="text-accent">import</span>
@@ -81,12 +81,12 @@ export function Hero() {
                   <span className="text-background-main">;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     2
                   </span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     3
                   </span>
                   <span className="text-accent">export const</span>
@@ -97,20 +97,20 @@ export function Hero() {
                   <span className="text-background-main ml-2">&#123;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     4
                   </span>
                   <span className="text-accent ml-4">return</span>
                   <span className="text-background-main ml-2">(</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     5
                   </span>
                   <span className="text-brand ml-8">&lt;Developer</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     6
                   </span>
                   <span className="text-text-muted ml-12">stack=</span>
@@ -123,7 +123,7 @@ export function Hero() {
                   <span className="text-background-main">]&#125;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     7
                   </span>
                   <span className="text-text-muted ml-12">location=</span>
@@ -132,7 +132,7 @@ export function Hero() {
                   <span className="text-background-main">&#125;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     8
                   </span>
                   <span className="text-text-muted ml-12">status=</span>
@@ -143,7 +143,7 @@ export function Hero() {
                   <span className="text-background-main">&#125;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     9
                   </span>
                   <span className="text-text-muted ml-12">philosophy=</span>
@@ -154,19 +154,19 @@ export function Hero() {
                   <span className="text-background-main">&#125;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     10
                   </span>
                   <span className="text-brand ml-8">/&gt;</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     11
                   </span>
                   <span className="text-background-main ml-4">);</span>
                 </div>
                 <div className="flex">
-                  <span className="text-text-secondary select-none pr-4 text-right w-8">
+                  <span className="text-text-secondary select-none pr-4 text-right w-8 shrink-0">
                     12
                   </span>
                   <span className="text-background-main">&#125;;</span>
