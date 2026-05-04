@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://samipab.com.np/sitemap.xml",
+    sitemap: "https://www.samipabroka.com.np/sitemap.xml",
   };
 }

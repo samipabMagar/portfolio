@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://samipab.com.np"),
+  metadataBase: new URL("https://www.samipabroka.com.np"),
   title: {
     default: "Samipab Roka Magar | Portfolio",
     template: "%s | Samipab Roka Magar",
