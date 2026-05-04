@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { MenuIcon, CloseIcon } from "@/components/ui/icons";
 
 export default function Navbar() {
@@ -22,9 +23,16 @@ export default function Navbar() {
           <div className="flex-shrink-0 flex items-center md:w-1/4">
             <Link
               href="/"
-              className="text-3xl font font-serif italic text-accent font-semibold  tracking-tight"
+              className="relative w-32 h-10 sm:h-12 flex items-center"
             >
-              SRM<span className="text-text-primary">.</span>
+              <Image
+                src="/images/logo.png"
+                alt="Samipab Roka Magar"
+                fill
+                sizes="(min-width: 640px) 128px, 96px"
+                className="object-contain object-left"
+                priority
+              />
             </Link>
           </div>
 

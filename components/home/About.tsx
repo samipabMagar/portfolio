@@ -14,8 +14,8 @@ export function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
           {/* Left: Developer ID Card */}
-          <div className="relative max-w-sm mx-auto lg:mx-0 w-full">
-            <div className="relative bg-text-primary rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative max-w-sm mx-auto lg:mx-0 w-full group  animate-swing origin-top">
+            <div className="relative bg-text-primary rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500  ">
               <div className="relative h-80 w-full">
                 <Image
                   src="/images/me.webp"
