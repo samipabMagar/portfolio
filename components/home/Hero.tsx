@@ -4,14 +4,14 @@ import { DownloadIcon, ArrowRightIcon } from "@/components/ui/icons";
 export function Hero() {
   return (
     <main className="relative overflow-hidden flex items-center">
-      {/* Background Orbs */}
+      
       <div className="absolute top-20 -left-32 w-96 h-96 bg-brand/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" />
       <div
         className="absolute top-40 -right-32 w-96 h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
         style={{ animationDelay: "2s" }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10  items-center">
           {/* Left Column: Typography & CTAs */}
           <div className="flex flex-col items-start text-left">
