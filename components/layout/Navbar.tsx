@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { MenuIcon, CloseIcon } from "@/components/ui/icons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full bg-background-main/90 backdrop-blur-md border-b border-border-soft">
+    <nav className="sticky top-0 z-50 w-full bg-background-main/90 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           {/* Logo */}
@@ -57,34 +58,10 @@ export default function Navbar() {
               aria-expanded={isOpen}
             >
               <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
-                <svg
-                  className="block h-7 w-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
+              {isOpen ? (
+                <CloseIcon className="block h-7 w-7" />
               ) : (
-                <svg
-                  className="block h-7 w-7"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
+                <MenuIcon className="block h-7 w-7" />
               )}
             </button>
           </div>
