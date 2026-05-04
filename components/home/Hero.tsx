@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DownloadIcon } from "@/components/ui/icons";
+import { DownloadIcon, ArrowRightIcon } from "@/components/ui/icons";
 
 export function Hero() {
   return (
@@ -36,9 +36,10 @@ export function Hero() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="#projects"
-                className="bg-brand hover:bg-brand-hover text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-colors shadow-md flex items-center justify-center"
+                className="bg-brand hover:bg-brand-hover text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-colors shadow-md flex items-center justify-center gap-2 group"
               >
                 View Work
+                <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <a
                 href="/resume.pdf"

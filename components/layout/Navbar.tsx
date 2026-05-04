@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full bg-background-main/90 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between h-12 sm:h-16 items-center">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center md:w-1/4">
             <Link
@@ -70,7 +70,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-background-surface border-b border-border absolute w-full shadow-lg">
+        <div className="md:hidden bg-background-main border-b border-border absolute w-full shadow-lg">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
               <Link
