@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Samipab Roka Magar",
     images: [
       {
-        url: "/images/me.webp",
+        url: "/images/samipab.png",
         width: 1200,
         height: 630,
         alt: "Samipab Roka Magar",
@@ -46,6 +46,9 @@ export const metadata: Metadata = {
     description:
       "Samipab Roka Magar is a web developer based in Pokhara, Nepal, building modern, fast, and accessible web applications.",
     images: ["/images/me.webp"],
+  },
+  verification: {
+    google: "0fqgd6fjUXvoS6QpWdSJl0nMxaqxwQ9ulw-ue4522fw",
   },
 };
 
