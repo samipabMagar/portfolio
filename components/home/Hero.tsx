@@ -67,7 +67,7 @@ export function Hero() {
               </div>
 
               {/* Code Content */}
-              <div className="p-6 text-sm sm:text-base font-mono leading-relaxed overflow-x-auto">
+              <div className="p-6 text-sm sm:text-base font-mono leading-relaxed overflow-x-auto whitespace-nowrap">
                 <div className="flex">
                   <span className="text-text-secondary select-none pr-4 text-right w-8">
                     1
