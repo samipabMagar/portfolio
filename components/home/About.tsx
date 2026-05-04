@@ -73,7 +73,41 @@ export function About() {
             </div>
           </div>
 
-         
+          {/* Right: Content */}
+          <div className="flex flex-col justify-center py-4">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-text-primary tracking-tight mb-10 leading-[1.1]">
+              Crafting digital <br className="hidden sm:block" />
+              experiences with{" "}
+              <span className="italic text-brand">purpose.</span>
+            </h2>
+
+            <div className="space-y-6 text-base text-text-secondary leading-relaxed font-light">
+              <p>
+                I love building things for the web — from clean, fast frontends
+                to solid backend systems. I care a lot about both how things
+                work and how they look, so I always try to write code that is
+                easy to maintain and build interfaces that feel great to use.
+              </p>
+
+              {/* Highlighted Quote */}
+              <div className="relative pl-6 py-2 my-1">
+                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent rounded-full" />
+                <p className="text-2xl font-serif italic text-accent leading-snug">
+                  "Great software lives at the intersection of clean logic and
+                  intuitive design."
+                </p>
+              </div>
+
+              <p>
+                I'm currently a Software Developer Intern at Yeti Nepal and
+                doing my Bachelors in Information Technology (BIT) at
+                Informatics College Pokhara. I enjoy learning new things,
+                working with others, and turning real problems into working
+                solutions. I'm always looking for ways to improve and build
+                things that actually matter.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
