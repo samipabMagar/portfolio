@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
+import ProgressBar from "@/components/layout/ProgressBar";
+import CustomCursor from "@/components/layout/CustomCursor";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -16,7 +18,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.samipabroka.com.np"),
   title: {
-    default: "Samipab Roka Magar | Portfolio",
+    default: "Samipab Roka Magar | Web Developer",
     template: "%s | Samipab Roka Magar",
   },
   description:
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "Samipab Roka Magar | Portfolio",
+    title: "Samipab Roka Magar | Web Developer",
     description:
       "Samipab Roka Magar is a web developer based in Pokhara, Nepal, building modern, fast, and accessible web applications.",
     siteName: "Samipab Roka Magar",
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Samipab Roka Magar | Portfolio",
+    title: "Samipab Roka Magar | Web Developer ",
     description:
       "Samipab Roka Magar is a web developer based in Pokhara, Nepal, building modern, fast, and accessible web applications.",
     images: ["/images/me.webp"],
@@ -54,8 +56,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
+}: Readonly<{ 
+  children: React.ReactNode; 
 }>) {
   return (
     <html
@@ -63,6 +65,8 @@ export default function RootLayout({
       className={`${outfit.variable} ${playfair.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-sans">
+        <CustomCursor />
+        <ProgressBar />
         <Navbar />
         {children}
       </body>
