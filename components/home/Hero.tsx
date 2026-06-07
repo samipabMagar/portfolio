@@ -3,8 +3,7 @@ import { DownloadIcon, ArrowRightIcon } from "@/components/ui/icons";
 
 export function Hero() {
   return (
-    <main className="relative overflow-hidden flex items-center">
-      
+    <main className="sticky top-0 h-[100dvh] overflow-hidden flex items-center z-0 ">
       <div className="absolute top-20 -left-32 w-96 h-96 bg-brand/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" />
       <div
         className="absolute top-40 -right-32 w-96 h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"

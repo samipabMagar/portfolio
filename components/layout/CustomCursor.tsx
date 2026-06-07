@@ -5,6 +5,7 @@ import { motion, useMotionValue, useSpring } from "motion/react";
 
 export default function CustomCursor() {
   const [isMounted, setIsMounted] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   // Raw mouse coordinates
   const mouseX = useMotionValue(-1000);
@@ -26,8 +27,32 @@ export default function CustomCursor() {
       mouseY.set(e.clientY);
     };
 
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      // Triggers hover state if the hovered element or any of its parents are interactive
+      const isClickable = target.closest('a, button, input, select, textarea, [role="button"]');
+      if (isClickable) {
+        setIsHovering(true);
+      }
+    };
+
+    const handleMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const isClickable = target.closest('a, button, input, select, textarea, [role="button"]');
+      if (isClickable) {
+        setIsHovering(false);
+      }
+    };
+
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mouseout", handleMouseOut);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("mouseout", handleMouseOut);
+    };
   }, [mouseX, mouseY]);
 
   if (!isMounted) return null;
@@ -43,6 +68,11 @@ export default function CustomCursor() {
           translateX: "-50%",
           translateY: "-50%",
         }}
+        animate={{
+          scale: isHovering ? 2.5 : 1,
+          opacity: isHovering ? 0.7 : 1,
+        }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
       />
 
       {/* Large Lazy Blur Background */}

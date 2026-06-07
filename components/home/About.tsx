@@ -1,21 +1,32 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
+import { motion, useScroll } from "motion/react";
+import { ScrubRevealText } from "@/components/animations/ScrubRevealText";
 
 export function About() {
+  const rightColumnRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: rightColumnRef,
+    offset: ["start 75%", "end 60%"], // The total scroll distance for the entire sequence
+  });
+
   return (
     <section
       id="about"
-      className="py-10 bg-background-muted border-t border-border-soft/30"
+      className="relative z-10 py-10 h-00 bg-background-muted border-t border-border-soft/30 shadow-[0_-20px_50px_rgba(0,0,0,0.15)] rounded-t-2xl"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-accent font-semibold tracking-widest mb-4  uppercase text-sm mb- flex items-center gap-3">
+        <p className="text-accent font-semibold tracking-widest mb-4 uppercase text-sm flex items-center gap-3">
           <span className="w-8 h-[2px] bg-accent"></span>
           About Me
         </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2  items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-0">
           {/* Left: Developer ID Card */}
-          <div className="relative max-w-sm mx-auto lg:mx-0 w-full group  animate-swing origin-top">
-            <div className="relative bg-text-primary rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500  ">
+          <div className="relative max-w-sm mx-auto lg:mx-0 w-full group animate-swing origin-top">
+            <div className="relative bg-text-primary rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500">
               <div className="relative h-80 w-full">
                 <Image
                   src="/images/me.webp"
@@ -74,38 +85,43 @@ export function About() {
           </div>
 
           {/* Right: Content */}
-          <div className="flex flex-col justify-center py-4">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-text-primary tracking-tight mb-10 leading-[1.1]">
-              Crafting digital <br className="hidden sm:block" />
-              experiences with{" "}
-              <span className="italic text-brand">purpose.</span>
-            </h2>
+          <div
+            ref={rightColumnRef}
+            className="flex flex-col justify-center py-4"
+          >
+            <ScrubRevealText
+              as="h2"
+              progress={scrollYProgress}
+              range={[0, 0.2]}
+              text="Crafting digital experiences with purpose."
+              className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-text-primary tracking-tight mb-10 leading-[1.1]"
+            />
 
             <div className="space-y-6 text-base text-text-secondary leading-relaxed font-light">
-              <p>
-                I love building things for the web — from clean, fast frontends
-                to solid backend systems. I care a lot about both how things
-                work and how they look, so I always try to write code that is
-                easy to maintain and build interfaces that feel great to use.
-              </p>
+              <ScrubRevealText
+                progress={scrollYProgress}
+                range={[0.2, 0.55]}
+                text="I love building things for the web — from clean, fast frontends to solid backend systems. I care a lot about both how things work and how they look, so I always try to write code that is easy to maintain and build interfaces that feel great to use."
+              />
 
               {/* Highlighted Quote */}
               <div className="relative pl-6 py-2 my-1">
                 <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-accent rounded-full" />
-                <p className="text-2xl font-serif italic text-accent leading-snug">
-                  "Great software lives at the intersection of clean logic and
-                  intuitive design."
-                </p>
+                <ScrubRevealText
+                  progress={scrollYProgress}
+                  range={[0.55, 0.7]}
+                  text={
+                    '"Great software lives at the intersection of clean logic and intuitive design."'
+                  }
+                  className="text-2xl font-serif italic text-accent leading-snug"
+                />
               </div>
 
-              <p>
-                I'm currently a Software Developer Intern at Yeti Nepal and
-                doing my Bachelors in Information Technology (BIT) at
-                Informatics College Pokhara. I enjoy learning new things,
-                working with others, and turning real problems into working
-                solutions. I'm always looking for ways to improve and build
-                things that actually matter.
-              </p>
+              <ScrubRevealText
+                progress={scrollYProgress}
+                range={[0.7, 1]}
+                text="I'm currently a Software Developer Intern at Yeti Nepal and doing my Bachelors in Information Technology (BIT) at Informatics College Pokhara. I enjoy learning new things, working with others, and turning real problems into working solutions. I'm always looking for ways to improve and build things that actually matter."
+              />
             </div>
           </div>
         </div>
