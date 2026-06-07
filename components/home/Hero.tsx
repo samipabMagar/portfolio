@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
 import { DownloadIcon, ArrowRightIcon } from "@/components/ui/icons";
+import { WordSlideIn } from "@/components/animations/WordSlideIn";
 
 export function Hero() {
   return (
-    <main className="sticky top-0 h-[100dvh] overflow-hidden flex items-center z-0 ">
+    <main className="sticky top-0 h-[100dvh] overflow-hidden flex items-start sm:items-center z-0 pt-14 sm:pt-0">
       <div className="absolute top-20 -left-32 w-96 h-96 bg-brand/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" />
       <div
         className="absolute top-40 -right-32 w-96 h-96 bg-accent/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
@@ -14,40 +18,66 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10  items-center">
           {/* Left Column: Typography & CTAs */}
           <div className="flex flex-col items-start text-left">
-            <p className="text-accent font-semibold tracking-widest uppercase text-sm mb-6 flex items-center gap-3">
-              <span className="w-8 h-[2px] bg-accent"></span>
-              Web Developer based in Nepal
-            </p>
+            <div className="flex items-center gap-3 mb-6">
+              <motion.span
+                className="w-8 h-[2px] bg-accent"
+                initial={{ scaleX: 0, opacity: 0 }}
+                animate={{ scaleX: 1, opacity: 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              />
+              <WordSlideIn
+                as="p"
+                text="Web Developer based in Nepal"
+                className="text-accent font-semibold tracking-widest uppercase text-sm items-center"
+                stagger={0.09}
+              />
+            </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-text-primary leading-[1.1] mb-6 tracking-tight">
-              Transforming ideas <br className="hidden sm:block" />
-              into <span className="italic text-brand">engaging</span>{" "}
-              <br className="hidden sm:block" />
-              digital products.
-            </h1>
+            <WordSlideIn
+              as="h1"
+              text="Transforming ideas into engaging digital products."
+              highlights={{ engaging: "italic text-brand" }}
+              className="text-4xl sm:text-6xl lg:text-7xl font-serif font-bold text-text-primary leading-[1.1] mb-6 tracking-tight"
+              stagger={0.09}
+              delay={0.15}
+            />
 
-            <p className="text-lg text-text-secondary max-w-lg mb-10 leading-relaxed font-light">
-              I love building modern, responsive web applications that merge
-              clean design with optimized performance. Always learning,
-              building, and exploring new technologies.
-            </p>
+            <WordSlideIn
+              as="p"
+              text="I love building modern, responsive web applications that merge clean design with optimized performance. Always learning, building, and exploring new technologies."
+              className="text-lg text-text-secondary max-w-lg mb-10 leading-relaxed font-light"
+              delay={0.4}
+              stagger={0.03}
+            />
 
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="#projects"
-                className="bg-brand hover:bg-brand-hover text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-colors shadow-md flex items-center justify-center gap-2 group"
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", damping: 20, stiffness: 120, delay: 0.8 }}
               >
-                View Work
-                <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-              <a
-                href="/resume.pdf"
-                download="Resume.pdf"
-                className="border-2 border-border-soft hover:border-brand text-text-primary hover:text-brand px-8 py-3.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-all bg-background-surface/50 backdrop-blur-sm shadow-sm flex items-center justify-center gap-2"
+                <Link
+                  href="#projects"
+                  className="bg-brand hover:bg-brand-hover text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-colors shadow-md flex items-center justify-center gap-2 group"
+                >
+                  View Work
+                  <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ y: 30, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ type: "spring", damping: 20, stiffness: 120, delay: 0.95 }}
               >
-                Resume
-                <DownloadIcon />
-              </a>
+                <a
+                  href="/resume.pdf"
+                  download="Resume.pdf"
+                  className="border-2 border-border-soft hover:border-brand text-text-primary hover:text-brand px-8 py-3.5 rounded-full text-sm font-semibold tracking-widest uppercase transition-all bg-background-surface/50 backdrop-blur-sm shadow-sm flex items-center justify-center gap-2"
+                >
+                  Resume
+                  <DownloadIcon />
+                </a>
+              </motion.div>
             </div>
           </div>
 
